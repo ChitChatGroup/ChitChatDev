@@ -32,9 +32,11 @@ module.exports = function(sequelize, DataTypes) {
         len: [6, 15]
       }
     },
+    //User biography (to be typed later)
     bio: {
       type: DataTypes.STRING,
-      allowNull: true
+      allowNull: true,
+      defaultValue: 'Let the world know about you!'
     }
   });
   // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
