@@ -19,7 +19,7 @@ passport.use(new LocalStrategy(
       // If there's no user with the given username
       if (!dbUser) {
         return done(null, false, {
-          message: "Username in use."
+          message: "No user with given username."
         });
       }
       // If there is a user with the given username, but the password the user gives us is incorrect
