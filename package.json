@@ -1,5 +1,5 @@
 {
-  "name": "ChitChat",
+  "name": "chitchat",
   "version": "0.1.0",
   "description": "Dev verision of ChitChat app.",
   "main": "server.js",
