@@ -4,10 +4,191 @@ form.login {
 }
 
 
-.signup {
+body {
+
+	background: url(https://media.giphy.com/media/xT8qBhrlNooHBYR9f2/giphy.gif) no-repeat center center fixed; 
+  	background-size: cover;
 
 
 
+}
 
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
+
+.navbar{
+	background-color: black;
+	border: black;
+}
+
+#header1{
+
+	text-align: center;
+	font-size: 32pt;
+	color: orange;
+	font-style: oblique;
+	font-weight: bold;
+	font-family: 'Press Start 2P', cursive;
+
+}
+
+#header2 {
+
+	text-align: center;
+	font-size: 32pt;
+	color: orange;
+	font-style: oblique;
+	font-weight: bold;
+	font-family: 'Press Start 2P', cursive;
+
+}
+
+
+
+#email {
+
+	font-size: 12pt;
+	color: white;
+	font-style: oblique;
+	font-weight: bold;
+
+}
+
+#username {
+
+	font-size: 12pt;
+	color: white;
+	font-style: oblique;
+	font-weight: bold;
+}
+
+
+#password {
+
+	font-size: 12pt;
+	color: white;
+	font-style: oblique;
+	font-weight: bold;
+
+}
+
+#profimage{
+
+	font-size: 12pt;
+	color: white;
+	font-style: oblique;
+	font-weight: bold;
+
+}
+
+
+#emailaddy{
+
+	font-size: 12pt;
+	color: white;
+	font-style: oblique;
+	font-weight: bold;
 	
+}
+
+#pw{
+
+	font-size: 12pt;
+	color: white;
+	font-style: oblique;
+	font-weight: bold;
+
+
+}
+
+
+#welcome {
+
+	text-align: center;
+	font-size: 32pt;
+	color: orange;
+	font-style: oblique;
+	font-weight: bold;
+	font-family: 'Press Start 2P', cursive;
+}
+
+#logout {
+
+	text-align: center;
+	font-size: 12pt;
+	color: orange;
+	font-style: oblique;
+	font-weight: bold;
+	font-family: 'Press Start 2P', cursive;
+	
+}
+
+
+
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
+
+
+.social-btn-holder{
+  padding:10px;
+  margin-top:5px;
+  margin-bottom:5px;
+}
+.social-btn-holder .btn-social{
+  font-size:12px;
+  font-weight:bold;
+}
+
+.btn-social{
+  color: white;
+  opacity:0.9;
+}
+.btn-social:hover {
+  color: white;
+  opacity:1;
+}
+.btn-facebook {
+background-color: #3b5998;
+}
+.btn-twitter {
+background-color: #00aced;
+}
+.btn-linkedin {
+background-color:#0e76a8;
+}
+.btn-github{
+  background-color:#000000;
+}
+.btn-google {
+  background-color: #c32f10;
+}
+.btn-stackoverflow{
+  background-color: #D38B28;
+}
+
+.btn-hackerrank{
+  background-color: #27AB5B;
+}
+.btn-soundcloud{
+  background-color: #FF7202;
+}
+
+
+
+.centered-text{
+  text-align: center;
+}
+
+
+#square{
+
+	opacity: 0.9;
+    filter: alpha(opacity=50);
+
+}
+
+#keanuebb {
+
+	opacity: 1;
+    filter: alpha(opacity=50);
+
 }
