@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "tpoH1004",
-    "database": "passport_demo",
+    "database": "chatdb",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
