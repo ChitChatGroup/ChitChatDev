@@ -11,9 +11,8 @@ module.exports = function (sequelize, DataTypes) {
     // The password cannot be null
     password: {
       type: DataTypes.STRING,
-      allowNull: true
+      allowNull: false
     }
   });
   return Channel;
 };
-
