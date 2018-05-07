@@ -1,9 +1,9 @@
 module.exports = function (sequelize, DataTypes) {
-  var Channels = sequelize.define("Channels", {
+  var Channel = sequelize.define("Channel", {
     // The email cannot be null, and must be a proper email before creation
-    name: {
+    channel_name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      notNull: true,
       validate: {
         isEmail: true
       }
@@ -14,5 +14,5 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false
     }
   });
-  return Channels;
-}
+  return Channel;
+};
