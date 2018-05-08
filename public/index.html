@@ -1,12 +1,26 @@
 <!doctype html>
 <html>
   <head>
-    <title>:)</title>
+    <title>:) Chat Page</title>
+
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
+  <link href="stylesheets/style.css" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css?family=Black+Ops+One" rel="stylesheet">
     <style>
 
    @import url('https://fonts.googleapis.com/css?family=Black+Ops+One');
 
+   #chatroombegin {
+
+  background-color: white;
+
+   }
+
     #rain {
+    text-align: center;
     margin: 0;
     font-size: 5em;
     color: #00f;
@@ -36,6 +50,7 @@
   100% {
     color: blue;
   }
+}
 
   @keyframes rainbow2 {
   20% {
@@ -53,6 +68,9 @@
   100% {
     color: green;
   }
+}
+
+
 
 </style>
 
@@ -79,10 +97,10 @@
       
 
     </style>
-    <h1 id="rain">  Hello, you are here</h1>
+    <h1 id="rain">  Let's begin....</h1>
     <br>
   </head>
-  <body>
+  <body id="chatroombegin">
     <ul id="messages"></ul>
     <form action="">
       <input id="m" autocomplete="off" /><button>Send</button>
