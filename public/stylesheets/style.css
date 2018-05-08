@@ -8,8 +8,10 @@ body {
 
 	background: url(https://media.giphy.com/media/xT8qBhrlNooHBYR9f2/giphy.gif) no-repeat center center fixed; 
   	background-size: cover;
-
-
+  	position: relative;
+  	margin: 0 auto;
+  	background-color: black;
+  	
 
 }
 
@@ -33,6 +35,7 @@ body {
     font-family: 'Black Ops One', cursive;
 
 }
+
 
 #header1:hover {
   animation-play-state: running;
