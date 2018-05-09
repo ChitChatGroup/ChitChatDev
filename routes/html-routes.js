@@ -33,4 +33,9 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
 
+  app.get("/profilepage", isAuthenticated, function (req, res) {
+    res.render('home');
+  });
+  
+
 };
