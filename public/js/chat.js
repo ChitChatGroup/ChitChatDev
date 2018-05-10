@@ -1,4 +1,5 @@
 
+var socket = io.connect();
 
 io.on('connection', function(socket){
 

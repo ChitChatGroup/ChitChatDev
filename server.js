@@ -1,5 +1,4 @@
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
+
 
 
 // Requiring necessary npm packages
@@ -9,6 +8,10 @@ var session = require("express-session");
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
 var exphbs = require("express-handlebars")
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+
+
 
 // Setting up port and requiring models for syncing
 var PORT = process.env.PORT || 8080;
