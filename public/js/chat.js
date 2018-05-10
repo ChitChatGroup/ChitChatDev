@@ -1,3 +1,5 @@
+var app = require('http').createServer(handler)
+var io = require('socket.io')(app);
 
 var socket = io.connect();
 
