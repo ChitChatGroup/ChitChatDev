@@ -1,18 +1,13 @@
-var app = require('express')();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
-var port = process.env.PORT || 3000;
-
 
 
 io.on('connection', function(socket){
 
 	socket.on('chat message', function(data){
 		io.emit('new message', {msg: data, id: socket.username});
-		
-		
+
+
 		console.log(data)
-		
+
 
 	});
 });
@@ -36,14 +31,14 @@ io.sockets.on('connection', function (socket) {
 	});
 });
 socket.on('switchRoom', function(newroom){
-	
+
 	socket.leave(socket.room);
-	
+
 	socket.join(newroom);
 	socket.emit('updatechat', 'SERVER', 'you have connected to '+ newroom);
-	
+
 	socket.broadcast.to(socket.room).emit('updatechat', 'SERVER', socket.username+' has left this room');
-	
+
 	socket.room = newroom;
 	socket.broadcast.to(newroom).emit('updatechat', 'SERVER', socket.username+' has joined this room');
 	socket.emit('updaterooms', rooms, newroom);
