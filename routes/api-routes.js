@@ -52,4 +52,8 @@ module.exports = function(app) {
     }
   });
 
+  app.get('/users/:id', function (req, res) {
+  res.send(req.params)
+});
+
 };
