@@ -6,9 +6,6 @@ var session = require("express-session");
 var passport = require("./config/passport");
 var exphbs = require("express-handlebars")
 
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
-
 // Setting up port and requiring models for syncing
 var PORT = process.env.PORT || 8080;
 var db = require("./models");
@@ -22,6 +19,9 @@ app.use(express.static("public"));
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
+
+var server = app.listen(PORT);
+var io = require('socket.io').listen(server);
 
 //Handlebars init
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
