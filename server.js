@@ -8,14 +8,19 @@ var session = require("express-session");
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
 var exphbs = require("express-handlebars")
+<<<<<<< HEAD
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
 
 
+=======
+var socket = require('socket.io');
+>>>>>>> ecbfbb7ccacfd925c06e05f6aa35634778b8a635
 // Setting up port and requiring models for syncing
 var PORT = process.env.PORT || 8080;
 var db = require("./models");
+
 
 // Creating express app and configuring middleware needed for authentication
 var app = express();
@@ -27,17 +32,33 @@ app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true 
 app.use(passport.initialize());
 app.use(passport.session());
 
+// var server = app.listen(PORT);
 //Handlebars init
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
+
 
 // Requiring our routes
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 
-// Syncing our database and logging a message to the user upon success
+
 db.sequelize.sync({force:true}).then(function() {
-  app.listen(PORT, function() {
-    console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
-  });
 });
+
+var server = app.listen(PORT, function() {
+  console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
+});
+
+var io = socket(server);
+
+
+
+io.on('connection', function (socket) {
+  console.log('made connection'); 
+
+});
+
+
+
+console.log(app)
