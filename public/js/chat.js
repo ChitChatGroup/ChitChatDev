@@ -1,4 +1,5 @@
 
+
 var socket = io.connect('http://localhost:8080');
 
 
@@ -8,6 +9,7 @@ var message = document.getElementById('message'),
   output = document.getElementById('output');
 
 var handle;
+
 
 // $.get("api/username", function (data) {
 //   // Make sure the data contains the username as expected before using it
@@ -28,4 +30,6 @@ btn.addEventListener('click', function () {
 //Listen for events
 socket.on('chat', function (data) {
   output.innerHTML += '<p><strong>' + data.handle + ':</strong>' + data.message + '</p>';
+
 });
+
