@@ -36,15 +36,15 @@ module.exports = function (app) {
     res.redirect("/");
   });
 
-  app.get("/api/username", function (req, res) {
-    if (!req.user) {
-      // The user is not logged in, send back an empty object
-      res.json({});
-    } else {
-      //Set handle to user's username
-      handle = res.user.username;
-    }
-  });
+  // app.get("/api/username", function (req, res) {
+  //   if (!req.user) {
+  //     // The user is not logged in, send back an empty object
+  //     res.json({});
+  //   } else {
+  //     //Set handle to user's username
+  //     handle = res.user.username;
+  //   }
+  // });
 
   // Route for getting some data about our user to be used client side
   app.get("/api/user_data", function (req, res) {
