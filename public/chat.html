@@ -143,29 +143,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.dev.js"></script>
   <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-<<<<<<< HEAD
-  <script type="text/javascript" src="/js/chat.js">
-  <script>
-
-
-    $(function () {
-      var socket = io();
-      $('form').submit(function () {
-        socket.emit('chat message', $('#m').val());
-        $('#m').val('');
-        return false;
-      });
-      socket.on('new message', function (msg) {
-        $('#messages').append($('<li>').text(msg.id + ': ' + msg.msg));
-
-        console.log(msg)
-        window.scrollTo(0, document.body.scrollHeight);
-      });
-    });
-  </script>
-=======
   <script type="text/javascript" src="/js/chat.js"></script>
->>>>>>> 75d7aa27dde48a073eef2c3e4f5e7959eedf5c3f
 </body>
 
 
