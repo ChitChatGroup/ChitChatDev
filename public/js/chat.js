@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 var app = require('http').createServer(handler)
 var io = require('socket.io')(app);
 
@@ -18,8 +19,12 @@ io.on('connection', function(socket){
 =======
 //MAKE CONNECTION 
 var socket = io.connect('http://localhost:8080')
+=======
+>>>>>>> 75d7aa27dde48a073eef2c3e4f5e7959eedf5c3f
 
+var socket = io.connect('http://localhost:8080');
 
+<<<<<<< HEAD
 let usernames = {};
 >>>>>>> ecbfbb7ccacfd925c06e05f6aa35634778b8a635
 
@@ -57,24 +62,17 @@ socket.on('switchRoom', function(newroom){
 	socket.emit('updaterooms', rooms, newroom);
 });
 =======
+=======
 
-  // when the client emits 'adduser', this listens and executes
-  socket.on('adduser', function (username) {
-    // store the username in the socket session for this client
-    socket.username = username;
-    // store the room name in the socket session for this client
-    socket.room = 'room1';
-    // add the client's username to the global list
-    usernames[username] = username;
-    // send client to room 1
-    socket.join('room1');
-    // echo to client they've connected
-    socket.emit('updatechat', 'SERVER', 'you have connected to room1');
-    // echo to room 1 that a person has connected to their room
-    socket.broadcast.to('room1').emit('updatechat', 'SERVER', username + ' has connected to this room');
-    socket.emit('updaterooms', rooms, 'room1');
-  });
+//Query DOM
+var message = document.getElementById('message'),
+  btn = document.getElementById('send'),
+  output = document.getElementById('output');
+>>>>>>> 75d7aa27dde48a073eef2c3e4f5e7959eedf5c3f
 
+var handle;
+
+<<<<<<< HEAD
   // when the client emits 'sendchat', this listens and executes
   socket.on('sendchat', function (data) {
     // we tell the client to execute 'updatechat' with 2 parameters
@@ -122,5 +120,26 @@ http.listen(port, function(){
     socket.leave(socket.room);
   });
 >>>>>>> ecbfbb7ccacfd925c06e05f6aa35634778b8a635
+=======
+$.get("api/username", function (data) {
+  // Make sure the data contains the username as expected before using it
+  if (data.hasOwnProperty('username')) {
+    console.log('Username: ' + req.user.username);
+    handle = req.user.username;
+  }
 });
 
+//Emit Events
+btn.addEventListener('click', function () {
+  socket.emit('chat', {
+    message: message.value,
+    handle: handle.value
+  })
+>>>>>>> 75d7aa27dde48a073eef2c3e4f5e7959eedf5c3f
+});
+
+
+//Listen for events
+socket.on('chat', function (data) {
+  output.innerHTML += '<p><strong>' + data.handle + ':</strong>' + data.message + '</p>';
+}
