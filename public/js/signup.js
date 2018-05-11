@@ -33,6 +33,7 @@ $(document).ready(function() {
       username: username,
       password: password
     }).then(function(data) {
+      console.log('This is DATA -----------------------' + data )
       window.location.replace(data);
       // If there's an error, handle it by throwing up a bootstrap alert
     }).catch(handleLoginErr);
