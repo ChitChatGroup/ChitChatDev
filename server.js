@@ -52,20 +52,3 @@ io.on('connection', function (socket) {
   })
 
 });
-
-var server = app.listen(PORT, function() {
-  console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
-});
-
-var io = socket(server);
-
-
-
-io.on('connection', function (socket) {
-  console.log('made connection'); 
-
-});
-
-
-
-console.log(app)
