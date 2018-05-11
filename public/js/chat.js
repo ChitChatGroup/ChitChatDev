@@ -1,12 +1,11 @@
-var express = require('express');
-var app = express();
-var server = app.listen(8080);
-var io = require('socket.io').listen(server);
+//MAKE CONNECTION 
+var socket = io.connect('http://localhost:8080')
+
 
 let usernames = {};
 
 let rooms = ['room1', 'room2', 'room3'];
-
+console.log(io.sockets)
 io.sockets.on('connection', function (socket) {
 
   // when the client emits 'adduser', this listens and executes
@@ -32,6 +31,17 @@ io.sockets.on('connection', function (socket) {
     io.sockets.in(socket.room).emit('updatechat', socket.username, data);
   });
 
+  socket.on('chat message', function (data) {
+    io.emit('new message', {
+      msg: data,
+      id: socket.username
+    });
+
+
+    console.log(data)
+
+  });
+  
   socket.on('switchRoom', function (newroom) {
     // leave the current room (stored in session)
     socket.leave(socket.room);
@@ -58,54 +68,3 @@ io.sockets.on('connection', function (socket) {
   });
 });
 
-socket.on('chat message', function (data) {
-  io.emit('new message', {
-    msg: data,
-    id: socket.username
-  });
-
-
-  console.log(data)
-
-  io.sockets.on('connection', function (socket) {
-    socket.on('add user', (username) => {
-
-
-
-      socket.username = username
-
-      socket.room = 'room1';
-      usernames[username] = username;
-
-      socket.join('room1')
-
-      socket.emit('updatechat', 'SERVER', 'you have connected to room1');
-
-      socket.broadcast.to('room1').emit('updatechat', 'SERVER', username + ' has connected to this room');
-      socket.emit('updaterooms', rooms, 'room1');
-    });
-
-    socket.on('switchRoom', function (newroom) {
-
-      socket.leave(socket.room);
-
-      socket.join(newroom);
-      socket.emit('updatechat', 'SERVER', 'you have connected to ' + newroom);
-
-      socket.broadcast.to(socket.room).emit('updatechat', 'SERVER', socket.username + ' has left this room');
-
-      socket.room = newroom;
-      socket.broadcast.to(newroom).emit('updatechat', 'SERVER', socket.username + ' has joined this room');
-      socket.emit('updaterooms', rooms, newroom);
-    });
-
-
-    http.listen(port, function () {
-      console.log('listening on *:' + port);
-    });
-
-  });
-});
-app.listen(PORT, function () {
-  console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
-});
