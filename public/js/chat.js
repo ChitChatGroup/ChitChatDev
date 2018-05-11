@@ -8,7 +8,7 @@ var message = document.getElementById('message'),
 
 var handle;
 
-$.get("api/username", function (req, res) {
+$.get("api/username", function (data) {
   // Make sure the data contains the username as expected before using it
   if (data.hasOwnProperty('username')) {
     console.log('Username: ' + req.user.username);
