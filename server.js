@@ -30,8 +30,6 @@ app.set('view engine', 'handlebars');
 // Requiring our routes
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
-
-
 db.sequelize.sync({ force: true }).then(function () {
 });
 
@@ -49,4 +47,22 @@ io.on('connection', function (socket) {
   socket.on('chat', function (data) {
     io.emit('chat', data);
   })
+
 });
+
+var server = app.listen(PORT, function() {
+  console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
+});
+
+var io = socket(server);
+
+
+
+io.on('connection', function (socket) {
+  console.log('made connection'); 
+
+});
+
+
+
+console.log(app)
