@@ -5,7 +5,6 @@ var socket = io.connect('http://localhost:8080')
 let usernames = {};
 
 let rooms = ['room1', 'room2', 'room3'];
-console.log(io.sockets)
 io.sockets.on('connection', function (socket) {
 
   // when the client emits 'adduser', this listens and executes

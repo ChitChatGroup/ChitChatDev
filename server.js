@@ -44,7 +44,7 @@ var io = socket(server);
 
 
 io.on('connection', function (socket) {
-  console.log('made connection');
+  console.log('made connection'); 
 
 });
 
