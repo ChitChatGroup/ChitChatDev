@@ -1,6 +1,9 @@
+<<<<<<< HEAD
+=======
 
 
 
+>>>>>>> 8db9dda45726c3df29c6b96fc7b3afaf3e13bade
 // Requiring necessary npm packages
 var express = require("express");
 var bodyParser = require("body-parser");
@@ -52,3 +55,20 @@ io.on('connection', function (socket) {
   })
 
 });
+
+var server = app.listen(PORT, function() {
+  console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
+});
+
+var io = socket(server);
+
+
+
+io.on('connection', function (socket) {
+  console.log('made connection'); 
+
+});
+
+
+
+console.log(app)
