@@ -1,9 +1,6 @@
-var app = require('express')();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
-var port = process.env.PORT || 8080;
 
-var socket = io.connect(http);
+
+var socket = io.connect('http://localhost:8080');
 
 
 //Query DOM
@@ -48,8 +45,4 @@ btn.addEventListener('click', function () {
 //Listen for events
 socket.on('chat', function (data, username) {
   output.innerHTML += '<p><strong>' + data.username + ':</strong>' + data.message + '</p>';
-});
-
-http.listen(port, function(){
-  console.log('listening on *:' + port);
 });
