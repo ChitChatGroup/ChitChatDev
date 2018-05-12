@@ -1,6 +1,6 @@
 
 
-
+var http = require("http");
 // Requiring necessary npm packages
 var express = require("express");
 var bodyParser = require("body-parser");
@@ -15,7 +15,11 @@ var db = require("./models");
 
 
 // Creating express app and configuring middleware needed for authentication
-var app = express();
+var express = require(‘express’),  
+   app = express.createServer(express.logger()),
+   io = require(‘socket.io’).listen(app),
+   routes = require(‘./routes’);
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static("public"));

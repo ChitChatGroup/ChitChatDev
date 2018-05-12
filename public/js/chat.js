@@ -1,6 +1,6 @@
 
 
-var socket = io.connect(process.env.PORT || 8080);
+var socket = io.connect(http);
 
 
 //Query DOM
@@ -45,4 +45,8 @@ btn.addEventListener('click', function () {
 //Listen for events
 socket.on('chat', function (data, username) {
   output.innerHTML += '<p><strong>' + data.username + ':</strong>' + data.message + '</p>';
+});
+
+http.listen(port, function(){
+  console.log('listening on *:' + port);
 });
