@@ -19,6 +19,26 @@ $.getJSON("api/username", function (data) {
   }
 });
 
+var typing = false;
+var timeout = undefined;
+
+function timeoutFunction(){
+  typing = false;
+  socket.emit(noLongerTypingMessage);
+}
+
+function onKeyDownNotEntered(){
+  if(typing == false) {
+    typing = true
+    socket.emit(typingMessage);
+    timeout = setTimeout(timeoutFunction, 5000);
+  } else {
+    clearTimeout(timeout);
+    timeout = setTimeout(timeoutFunction, 5000);
+  }
+
+}
+
 //Emit Events
 btn.addEventListener('click', function () {
   socket.emit('chat', {
