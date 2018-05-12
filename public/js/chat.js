@@ -19,6 +19,21 @@ var handle;
 //   }
 // });
 
+app.get("/api/user_data", function (req, res) {
+   if (!req.user) {
+     // The user is not logged in, send back an empty object
+     res.json({});
+   } else {
+     // Otherwise send back the user's username and id
+     // Sending back a password, even a hashed password, isn't a good idea
+     res.json({
+       
+       username: req.user.username,
+       
+     });
+   }
+ });
+
 //Emit Events
 btn.addEventListener('click', function () {
   socket.emit('chat', {
@@ -29,5 +44,5 @@ btn.addEventListener('click', function () {
 
 //Listen for events
 socket.on('chat', function (data) {
-  output.innerHTML += '<p><strong>' + data.handle + ':</strong>' + data.message + '</p>';
+  output.innerHTML += '<p><strong>' + data.username + ':</strong>' + data.message + '</p>';
 });
