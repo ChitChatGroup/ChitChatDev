@@ -3,8 +3,6 @@
 
 <head>
   <title>:) Chat Page</title>
-
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
@@ -13,16 +11,10 @@
   <style>
     @import url('https://fonts.googleapis.com/css?family=Black+Ops+One');
 
-    #chatroombegin {
-
-      background-color: white;
-
-    }
-
     #rain {
       text-align: center;
       margin: 0;
-      font-size: 5em;
+      font-size: 12pt;
       color: #00f;
       text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
       animation: rainbow 10s infinite;
@@ -70,7 +62,6 @@
       }
     }
   </style>
-
   <style>
     * {
       margin: 0;
@@ -126,26 +117,33 @@
       margin-bottom: 40px
     }
   </style>
-  <h1 id="rain"> Let's begin....</h1>
+  <h1 id="rain"> Let's begin....
+    <ol>
+      <li class="nav-li">
+        <a class="nav-a" href="profilepage.html">Profile</a>
+      </li>
+      <li class="nav-li">
+        <a class="nav-a" href="login.html">Logout</a>
+      </li>
+    </ol>
+  </h1>
+  </h1>
   <br>
 </head>
 
 <body id="chatroombegin">
+  <ul id="chat-window"></ul>
+  <div id="output"></div>
+  <form action="">
+    <input type="text" id="messages" placeholder="Message" />
+    <button id="send">Send</button>
+  </form>
 
-  <div id="mario-chat">
-    <div id="chat-window">
-      <div id="output"></div>
-    </div>
-  </div>
-<input type="text" id="message" placeholder="Message">
-<button id="send">Send</button>
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.dev.js"></script>
   <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
   <script type="text/javascript" src="/js/chat.js"></script>
 </body>
-
-
 
 </html>
