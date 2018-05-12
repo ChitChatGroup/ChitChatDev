@@ -71,8 +71,6 @@
     }
   </style>
 
-
-
   <style>
     * {
       margin: 0;
@@ -133,36 +131,21 @@
 </head>
 
 <body id="chatroombegin">
-  <ul id="messages"></ul>
-  <form action="">
-    <input id="m" autocomplete="off" />
-    <button>Send</button>
-  </form>
+
+  <div id="mario-chat">
+    <div id="chat-window">
+      <div id="output"></div>
+    </div>
+  </div>
+<input type="text" id="message" placeholder="Message">
+<button id="send">Send</button>
 
 
-
-
-  <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.dev.js"></script>
   <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-  <script>
-
-
-    $(function () {
-      var socket = io();
-      $('form').submit(function () {
-        socket.emit('chat message', $('#m').val());
-        $('#m').val('');
-        return false;
-      });
-      socket.on('new message', function (msg) {
-        $('#messages').append($('<li>').text(msg.id + ': ' + msg.msg));
-
-        console.log(msg)
-        window.scrollTo(0, document.body.scrollHeight);
-      });
-    });
-  </script>
+  <script type="text/javascript" src="/js/chat.js"></script>
 </body>
+
 
 
 </html>

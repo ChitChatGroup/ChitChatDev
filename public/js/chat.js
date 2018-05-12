@@ -1,57 +1,34 @@
-var app = require('express')();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
-var port = process.env.PORT || 3000;
 
-app.get('/', function(req, res){
-  res.sendFile(__dirname + '/index.html');
+var socket = io.connect("http://localhost:8080");
+
+
+//Query DOM
+var message = document.getElementById('message'),
+  btn = document.getElementById('send'),
+  output = document.getElementById('output');
+
+var handle;
+
+
+$.getJSON("api/username", function (data) {
+  console.log(data)
+  // Make sure the data contains the username as expected before using it
+  if (data.hasOwnProperty('username')) {
+    console.log('Username: ' + data);
+    handle = data.username;
+  }
 });
 
-io.on('connection', function(socket){
-
-  socket.on('chat message', function(data){
-    io.emit('new message', {msg: data, id: socket.username});
-   
-    
-    console.log(data)
-    
-
-  });
+//Emit Events
+btn.addEventListener('click', function () {
+  socket.emit('chat', {
+    message: message.value,
+    handle: handle
+  })
 });
 
-io.sockets.on('connection', function (socket) {
-socket.on('add user', (username)=>{
 
-
-
-socket.username = username
-
-socket.room = 'room1';
-usernames[username] = username;
-
-socket.join('room1')
-
-socket.emit('updatechat', 'SERVER', 'you have connected to room1');
-
-socket.broadcast.to('room1').emit('updatechat', 'SERVER', username + ' has connected to this room');
-		socket.emit('updaterooms', rooms, 'room1');
-	});
-
-socket.on('switchRoom', function(newroom){
-		
-		socket.leave(socket.room);
-		
-		socket.join(newroom);
-		socket.emit('updatechat', 'SERVER', 'you have connected to '+ newroom);
-		
-		socket.broadcast.to(socket.room).emit('updatechat', 'SERVER', socket.username+' has left this room');
-		
-		socket.room = newroom;
-		socket.broadcast.to(newroom).emit('updatechat', 'SERVER', socket.username+' has joined this room');
-		socket.emit('updaterooms', rooms, newroom);
-	});
-
-
-http.listen(port, function(){
-  console.log('listening on *:' + port);
+//Listen for events
+socket.on('chat', function (data) {
+  output.innerHTML += '<p><strong>' + data.handle + ':</strong>' + data.message + '</p>';
 });
