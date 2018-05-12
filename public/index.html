@@ -93,18 +93,18 @@
       
 
     </style>
-    <h1 id="rain">  Let's begin....
-      <ol>
-        <li class="nav-li"><a class="nav-a" href="index.html">Chat</a></li>
-        <li class="nav-li"><a class="nav-a" href="profilepage..html">Profile</a></li>
+    <h1 id="rain"> Let's begin....
+  <ol>
+        <li class="nav-li"><a class="nav-a" href="profilepage.html">Profile</a></li>
         <li class="nav-li"><a class="nav-a" href="login.html">Logout</a></li>
-      </ol></h1>
+      </ol></h1></h1>
     <br>
   </head>
   <body id="chatroombegin">
-    <ul id="messages"></ul>
+    <ul id="chat-window"></ul>
+    <div id="output"></div>
     <form action="">
-      <input id="m" autocomplete="off" /><button>Send</button>
+      <input type="text" id="messages" placeholder="Message" /><button id="send">Send</button>
     </form>
 
             
@@ -112,24 +112,9 @@
 
     <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-    <script>
-
-
-      $(function () {
-        var socket = io();
-        $('form').submit(function(){
-          socket.emit('chat message', $('#m').val());
-          $('#m').val('');
-          return false;
-        });
-        socket.on('new message', function(msg){
-          $('#messages').append($('<li>').text(msg.id + ': ' + msg.msg));
-
-          console.log(msg)
-          window.scrollTo(0, document.body.scrollHeight);
-        });
-      });
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.dev.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+  <script type="text/javascript" src="/js/chat.js"></script>
   </body>
 
   
