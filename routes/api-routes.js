@@ -42,7 +42,7 @@ module.exports = function (app) {
       res.json({});
     } else {
       //Set handle to user's username
-      handle = req.user.username;
+      return res.json({username: req.user.username});
     }
   });
 
