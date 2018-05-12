@@ -1,7 +1,11 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
+    "password": "",
+=======
     "password": "tpoH1004",
+>>>>>>> 8861870a7311f1a17f49d3bf39f9d835f61a43a8
     "database": "chatdb",
     "host": "127.0.0.1",
     "dialect": "mysql"
