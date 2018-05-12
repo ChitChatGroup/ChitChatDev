@@ -1,6 +1,6 @@
 
 
-var socket = io.connect();
+var socket = io.connect(process.env.PORT || 8080);
 
 
 //Query DOM
