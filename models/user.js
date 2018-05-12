@@ -28,7 +28,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       notNull: true,
       validate: {
-        len: [6, 15]
+        len: [4, 15]
       }
     },
     //User biography (to be typed later)

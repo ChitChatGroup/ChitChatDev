@@ -22,6 +22,10 @@ $.getJSON("api/username", function (data) {
 
 //Emit Events
 btn.addEventListener('click', function () {
+if (message.value === null) {
+  return alert("Message box is empty.")
+}
+
   socket.emit('chat', {
     message: message.value,
     handle: handle

@@ -3,56 +3,45 @@ form.login {
   margin-top: 50px;
 }
 
-
 body {
-
-	background: url(https://media.giphy.com/media/xT8qBhrlNooHBYR9f2/giphy.gif) no-repeat center center fixed; 
-  	background-size: cover;
-  	position: relative;
-  	margin: 0 auto;
-  	background-color: black;
-  	
-
+  background: url(https://media.giphy.com/media/xT8qBhrlNooHBYR9f2/giphy.gif) no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  margin: 0 auto;
+  background-color: black;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Black+Ops+One');
-
-
-.navbar{
-	background-color: black;
-	border: black;
+.navbar {
+  background-color: black;
+  border: black;
 }
 
-#header1{
-
-	text-align: center;
- 	margin: 0;
-    font-size: 5em;
-    color: #00f;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
-    animation: rainbow 10s infinite;
-    animation-play-state: paused;
-    font-family: 'Black Ops One', cursive;
-
+#header1 {
+  text-align: center;
+  margin: 0;
+  font-size: 5em;
+  color: #00f;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+  animation: rainbow 10s infinite;
+  animation-play-state: paused;
+  font-family: 'Black Ops One', cursive;
 }
-
 
 #header1:hover {
   animation-play-state: running;
 }
 
 #header2 {
-
-	text-align: center;
-	font-size: 32pt;
-	color: orange;
-	font-style: oblique;
-	font-weight: bold;
-	font-family: 'Black Ops One', cursive;
-	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
-    animation: rainbow 10s infinite;
-    animation-play-state: paused;
-
+  text-align: center;
+  font-size: 32pt;
+  color: orange;
+  font-style: oblique;
+  font-weight: bold;
+  font-family: 'Black Ops One', cursive;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+  animation: rainbow 10s infinite;
+  animation-play-state: paused;
 }
 
 #header2:hover {
@@ -60,89 +49,74 @@ body {
 }
 
 h1 {
-	
-	text-align: center;
-	font-size: 32pt;
-	color: orange;
-	font-style: oblique;
-	font-weight: bold;
-	font-family: 'Black Ops One', cursive;
-	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
-    animation: rainbow 10s infinite;
-    animation-play-state: paused;
-
-
+  text-align: center;
+  font-size: 32pt;
+  color: orange;
+  font-style: oblique;
+  font-weight: bold;
+  font-family: 'Black Ops One', cursive;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+  animation: rainbow 10s infinite;
+  animation-play-state: paused;
 }
 
-
 #email {
-
-	font-size: 12pt;
-	color: white;
-	font-style: oblique;
-	font-weight: bold;
-
+  font-size: 12pt;
+  color: white;
+  font-style: oblique;
+  font-weight: bold;
 }
 
 #username {
-
-	font-size: 12pt;
-	color: white;
-	font-style: oblique;
-	font-weight: bold;
+  font-size: 12pt;
+  color: white;
+  font-style: oblique;
+  font-weight: bold;
 }
-
 
 #password {
-
-	font-size: 12pt;
-	color: white;
-	font-style: oblique;
-	font-weight: bold;
-
+  font-size: 12pt;
+  color: white;
+  font-style: oblique;
+  font-weight: bold;
 }
 
-#profimage{
-
-	font-size: 12pt;
-	color: white;
-	font-style: oblique;
-	font-weight: bold;
-
+#profimage {
+  font-size: 12pt;
+  color: white;
+  font-style: oblique;
+  font-weight: bold;
 }
 
-
-#emailaddy{
-
-	font-size: 12pt;
-	color: white;
-	font-style: oblique;
-	font-weight: bold;
-	
+#emailaddy {
+  font-size: 12pt;
+  color: white;
+  font-style: oblique;
+  font-weight: bold;
 }
 
-#pw{
-
-	font-size: 12pt;
-	color: white;
-	font-style: oblique;
-	font-weight: bold;
-
-
+#pw {
+  font-size: 12pt;
+  color: white;
+  font-style: oblique;
+  font-weight: bold;
 }
 
+#output {
+  background-color: white;
+  min-height: 80%;
+}
 
 #welcome {
-
-	text-align: center;
-	font-size: 32pt;
-	color: orange;
-	font-style: oblique;
-	font-weight: bold;
-	font-family: 'Black Ops One', cursive;
-	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
-    animation: rainbow 10s infinite;
-    animation-play-state: paused;
+  text-align: center;
+  font-size: 32pt;
+  color: orange;
+  font-style: oblique;
+  font-weight: bold;
+  font-family: 'Black Ops One', cursive;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+  animation: rainbow 10s infinite;
+  animation-play-state: paused;
 }
 
 #welcome:hover {
@@ -150,93 +124,87 @@ h1 {
 }
 
 #logout {
-
-	text-align: center;
-	font-size: 12pt;
-	color: orange;
-	font-style: oblique;
-	font-weight: bold;
-	font-family: 'Black Ops One', cursive;
-	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
-    animation: rainbow 10s infinite;
-    animation-play-state: paused;
+  text-align: center;
+  font-size: 12pt;
+  color: orange;
+  font-style: oblique;
+  font-weight: bold;
+  font-family: 'Black Ops One', cursive;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+  animation: rainbow 10s infinite;
+  animation-play-state: paused;
 }
 
 #logout:hover {
   animation-play-state: running;
 }
 
-
-
-@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
-
-
-.social-btn-holder{
-  padding:10px;
-  margin-top:5px;
-  margin-bottom:5px;
-}
-.social-btn-holder .btn-social{
-  font-size:12px;
-  font-weight:bold;
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css") .social-btn-holder {
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
-.btn-social{
+.social-btn-holder .btn-social {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.btn-social {
   color: white;
-  opacity:0.9;
+  opacity: 0.9;
 }
+
 .btn-social:hover {
   color: white;
-  opacity:1;
+  opacity: 1;
 }
+
 .btn-facebook {
-background-color: #3b5998;
+  background-color: #3b5998;
 }
+
 .btn-twitter {
-background-color: #00aced;
+  background-color: #00aced;
 }
+
 .btn-linkedin {
-background-color:#0e76a8;
+  background-color: #0e76a8;
 }
-.btn-github{
-  background-color:#000000;
+
+.btn-github {
+  background-color: #000000;
 }
+
 .btn-google {
   background-color: #c32f10;
 }
-.btn-stackoverflow{
+
+.btn-stackoverflow {
   background-color: #D38B28;
 }
 
-.btn-hackerrank{
+.btn-hackerrank {
   background-color: #27AB5B;
 }
-.btn-soundcloud{
+
+.btn-soundcloud {
   background-color: #FF7202;
 }
 
-
-
-.centered-text{
+.centered-text {
   text-align: center;
 }
 
-
-#square{
-
-	opacity: 0.9;
-    filter: alpha(opacity=50);
-
+#square {
+  opacity: 0.9;
+  filter: alpha(opacity=50);
 }
 
 #keanuebb {
-
-	opacity: 1;
-    filter: alpha(opacity=50);
-
+  opacity: 1;
+  filter: alpha(opacity=50);
 }
-
-
 
 @keyframes rainbow {
   20% {
@@ -254,20 +222,19 @@ background-color:#0e76a8;
   100% {
     color: blue;
   }
-
   @keyframes rainbow2 {
-  20% {
-    color: #FFFFFF;
-  }
-  40% {
-    color:  #F5F5F5;
-  }
-  60% {
-    color: #FFFFF0;
-  }
-  80% {
-    color: grey;
-  }
-  100% {
-    color: green;
-  }
+    20% {
+      color: #FFFFFF;
+    }
+    40% {
+      color: #F5F5F5;
+    }
+    60% {
+      color: #FFFFF0;
+    }
+    80% {
+      color: grey;
+    }
+    100% {
+      color: green;
+    }
