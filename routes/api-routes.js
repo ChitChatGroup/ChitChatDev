@@ -64,12 +64,4 @@ module.exports = function (app) {
     }
   });
 
-<<<<<<< HEAD
-  app.get('/users/:id', function (req, res) {
-  res.send(req.params)
-});
-
 };
-=======
-};
->>>>>>> 8861870a7311f1a17f49d3bf39f9d835f61a43a8
