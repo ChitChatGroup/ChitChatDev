@@ -7,6 +7,7 @@ var message = document.getElementById('messages'),
   btn = document.getElementById('send'),
   output = document.getElementById('output');
 
+var messageInput = $("input#messages")
 var handle;
 
 
@@ -20,9 +21,10 @@ $.getJSON("api/username", function (data) {
 
 
 
+
 //Emit Events
 btn.addEventListener('click', function () {
-if (message.value === null) {
+if (message.value === "") {
   return alert("Message box is empty.")
 }
 
@@ -30,6 +32,8 @@ if (message.value === null) {
     message: message.value,
     handle: handle
   })
+
+  messageInput.val("")
 });
 
 
