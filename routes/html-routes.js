@@ -11,7 +11,7 @@ module.exports = function(app) {
     if (req.user) {
       console.log(JSON.stringify(req))
       res.redirect("/chat");
-    }
+    }else
     res.sendFile(path.join(__dirname, "../public/signup.html"));
   });
 

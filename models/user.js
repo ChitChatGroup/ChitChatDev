@@ -11,8 +11,7 @@ module.exports = function(sequelize, DataTypes) {
       notNull: true,
       unique: true,
       validate: {
-        is: /^[a-z]+$/i,
-        len: [4, 15],   
+        len: [4, 20
       }
     },
     // The email cannot be null, and must be a proper email before creation
