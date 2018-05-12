@@ -1,6 +1,6 @@
 
-var socket = io.connect("http://localhost:8080");
-
+var socket = io.connect(window.location.host);
+console.log(window.location.hostname)
 
 //Query DOM
 var message = document.getElementById('message'),
@@ -11,7 +11,6 @@ var handle;
 
 
 $.getJSON("api/username", function (data) {
-  console.log(data)
   // Make sure the data contains the username as expected before using it
   if (data.hasOwnProperty('username')) {
     console.log('Username: ' + data);
@@ -43,7 +42,7 @@ function onKeyDownNotEntered(){
 btn.addEventListener('click', function () {
   socket.emit('chat', {
     message: message.value,
-    handle: handle
+    handler: handle.username
   })
 });
 

@@ -23,8 +23,12 @@
     "mysql2": "^1.3.6",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
+<<<<<<< HEAD
+    "sequelize": "^4.37.7",
+=======
     "path": "^0.12.7",
     "sequelize": "^4.3.1",
+>>>>>>> 8861870a7311f1a17f49d3bf39f9d835f61a43a8
     "socket.io": "^2.1.0"
   },
   "devDependencies": {
