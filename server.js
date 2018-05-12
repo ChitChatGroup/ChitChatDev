@@ -1,8 +1,11 @@
-
-
-var http = require("http");
 // Requiring necessary npm packages
-var express = require("express");
+var express = require('express'),
+  app = express(),
+  server = require('http').createServer(app),
+  io = require('socket.io').listen(server);
+
+server.listen(process.env.PORT || 3000);
+
 var bodyParser = require("body-parser");
 var session = require("express-session");
 // Requiring passport as we've configured it
@@ -10,35 +13,40 @@ var passport = require("./config/passport");
 var exphbs = require("express-handlebars")
 var socket = require('socket.io');
 // Setting up port and requiring models for syncing
-var PORT = process.env.PORT || 8080;
 var db = require("./models");
 
 
 // Creating express app and configuring middleware needed for authentication
-var express = require(‘express’),  
-   app = express.createServer(express.logger()),
-   io = require(‘socket.io’).listen(app),
-   routes = require(‘./routes’);
-
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 app.use(bodyParser.json());
 app.use(express.static("public"));
 // We need to use sessions to keep track of our user's login status
-app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(session({
+  secret: "keyboard cat",
+  resave: true,
+  saveUninitialized: true
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 
 // var server = app.listen(PORT);
 //Handlebars init
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.engine('handlebars', exphbs({
+  defaultLayout: 'main'
+}));
 app.set('view engine', 'handlebars');
 
 
 // Requiring our routes
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
-db.sequelize.sync({ force: true }).then(function () {
-});
+
+db.sequelize.sync({
+  force: true
+}).then(function () {});
+
 
 var server = app.listen(PORT, function () {
   console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
@@ -49,7 +57,7 @@ var io = socket(server);
 
 
 io.on('connection', function (socket) {
-  console.log('made connection'+ socket.id);
+  console.log('made connection' + socket.id);
 
   socket.on('chat', function (data) {
     io.emit('chat', data);
