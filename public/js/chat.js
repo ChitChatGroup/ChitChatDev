@@ -1,6 +1,6 @@
 
 
-var socket = io.connect('http://localhost:8080');
+var socket = io.connect();
 
 
 //Query DOM
@@ -43,6 +43,6 @@ btn.addEventListener('click', function () {
 
 
 //Listen for events
-socket.on('chat', function (data) {
+socket.on('chat', function (data, username) {
   output.innerHTML += '<p><strong>' + data.username + ':</strong>' + data.message + '</p>';
 });
