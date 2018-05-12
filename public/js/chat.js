@@ -3,7 +3,7 @@ var socket = io.connect(window.location.host);
 console.log(window.location.hostname)
 
 //Query DOM
-var message = document.getElementById('message'),
+var message = document.getElementById('messages'),
   btn = document.getElementById('send'),
   output = document.getElementById('output');
 
